@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -137,11 +138,102 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(top = 24.dp, bottom = 8.dp)
+                            .padding(top = 24.dp, bottom = 16.dp)
                             .height(50.dp),
                         shape = RoundedCornerShape(10.dp)
                     ) {
                         Text("Login", fontSize = 16.sp)
+                    }
+
+                    // Divider
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Divider(
+                            modifier = Modifier.weight(1f),
+                            color = Color.Gray.copy(alpha = 0.5f)
+                        )
+                        Text(
+                            text = "OR",
+                            modifier = Modifier.padding(horizontal = 16.dp),
+                            color = Color.Gray,
+                            fontSize = 12.sp
+                        )
+                        Divider(
+                            modifier = Modifier.weight(1f),
+                            color = Color.Gray.copy(alpha = 0.5f)
+                        )
+                    }
+
+                    // Google Login Button
+                    OutlinedButton(
+                        onClick = {
+                            // Handle Google login
+                            errorMessage = "Google login not implemented yet"
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(vertical = 4.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.outlinedButtonColors(
+                            containerColor = Color.White
+                        )
+                    ) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.google_logo),
+                                contentDescription = "Google Logo",
+                                modifier = Modifier.size(20.dp),
+                                tint = Color.Unspecified
+                            )
+                            Spacer(modifier = Modifier.width(12.dp))
+                            Text(
+                                text = "Continue with Google",
+                                color = Color.Black,
+                                fontSize = 14.sp
+                            )
+                        }
+                    }
+
+                    // Facebook Login Button
+                    OutlinedButton(
+                        onClick = {
+                            // Handle Facebook login
+                            errorMessage = "Facebook login not implemented yet"
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                            .padding(vertical = 4.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.outlinedButtonColors(
+                            containerColor = Color.White
+                        )
+                    ) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.facebook_logo),
+                                contentDescription = "Facebook Logo",
+                                modifier = Modifier.size(20.dp),
+                                tint = Color.Unspecified
+                            )
+                            Spacer(modifier = Modifier.width(12.dp))
+                            Text(
+                                text = "Continue with Facebook",
+                                color = Color.Black,
+                                fontSize = 14.sp
+                            )
+                        }
                     }
 
                     // Hint text
