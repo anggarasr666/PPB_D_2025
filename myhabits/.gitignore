@@ -1,0 +1,19 @@
+# macOS specific files
+.DS_Store
+**/.DS_Store
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Gradle
+.gradle/
+build/
+local.properties
+
+# Android
+captures/
+.externalNativeBuild/
+.cxx/
